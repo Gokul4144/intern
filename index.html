@@ -9,7 +9,7 @@ export default function Home() {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="/globals.css" />
         <link
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
@@ -23,7 +23,7 @@ export default function Home() {
 
       <div className="header">
         <div className="container">
-          <div className="navbar">
+          <div className="navbar">  
             <div className="logo">
               <Link href="/">logo</Link>
             </div>
@@ -34,9 +34,9 @@ export default function Home() {
                   <a className="active">Products <i className="fas fa-caret-down"></i></a>
                   <ul id="inneritems">
                     <li><Link href="/moisterizers">Moisterizers</Link></li>
-                    <li><Link href="/serums">Serums</Link></li>
-                    <li><Link href="/cleansers">Cleansers</Link></li>
-                    <li><Link href="/sunscreens">Sunscreens</Link></li>
+                    <li><Link href="/Serums">Serums</Link></li>
+                    <li><Link href="/Cleansers">Cleansers</Link></li>
+                    <li><Link href="/Sunscreens">Sunscreens</Link></li>
                   </ul>
                 </li>
                 <li><Link href="/about">About</Link></li>
@@ -49,22 +49,19 @@ export default function Home() {
                 <input type="text" placeholder="Search..." />
                 <button><i className="fas fa-search"></i></button>
               </div>
-              <Link href="/cart"><i className="fas fa-shopping-cart"></i></Link>
+              <Link href="/card"><i className="fas fa-shopping-cart"></i></Link>
               <Link href="/account"><i className="fas fa-user"></i></Link>
             </div>
           </div>
 
           <div className="row">
             <div className="col-2">
-              <h1 style={{ textAlign: 'center' }}>
-                Here shopping becomes <br />simple!
-              </h1>
+              <h1><center>Here shopping becomes <br />simple!</center></h1>
               <p>
-                "We trust something in our store and assume it's good. We don't learn about the most precious thing in life— the food we put in our body. Educate yourself!"
+                "We trust something in our store and assume it's good. We don't learn about the most precious thing in life—
+                the food we put in our body. Educate yourself!"
               </p>
-              <div style={{ textAlign: 'center' }}>
-                <Link href="/allproduct" className="btn">Explore Now</Link>
-              </div>
+              <center><Link href="/allproduct" className="btn">Explore Now</Link></center>
             </div>
           </div>
         </div>
@@ -80,11 +77,9 @@ export default function Home() {
             { href: 'lipcare', img: 'menuicon.jpg', label: 'Lip care' },
           ].map((item, index) => (
             <div className="col-4" key={index}>
-              <Link href={`/${item.href}`}>
-                <img src={`/${item.img}`} alt={item.label} />
-              </Link>
+              <Link href={`/${item.href}`}><img src={`/${item.img}`} alt="" /></Link>
               <Link href={`/${item.href}`}><h4>{item.label}</h4></Link>
-              <Link href={`/${item.href}`}><p>Explore more..</p></Link>
+              <Link href={`/${item.href}`}><p>explore more..</p></Link>
             </div>
           ))}
         </div>
@@ -92,13 +87,13 @@ export default function Home() {
         <div className="offer">
           <div className="row">
             <div className="col-2">
-              <img src="/Salicylic_Body_wash-3.avif" className="offer-img" alt="Offer product" />
+              <img src="/Salicylic_Body_wash-3.avif" className="offer-img" alt="" />
             </div>
             <div className="col-2">
               <h4>Exclusively Available in Our Website</h4>
               <h1>L-Ascorbic Acid 8% Lip Treatment Balm</h1>
               <small>Prevents & treats hyperpigmentation, hydrates and softens lips</small><br />
-              <Link href="/l-ascorbic-acid-lip-treatment-balm" className="btn">Buy Now &#10140;</Link>
+              <Link href="/L-Ascorbic Acid 8% Lip Treatment Balm" className="btn">Buy Now &#10140;</Link>
             </div>
           </div>
         </div>
@@ -106,17 +101,17 @@ export default function Home() {
         <div className="testimonial">
           <div className="row">
             <div className="col-3">
-              <img src="/affordable.webp" alt="Transparency" />
+              <img src="/affordable.webp" alt="" />
               <h3>Transparency</h3>
               <p>"Full disclosure of ingredients used & their concentration"</p>
             </div>
             <div className="col-3">
-              <img src="/affordable.webp" alt="Affordable" />
+              <img src="/affordable.webp" alt="" />
               <h3>Affordable</h3>
               <p>"Skincare, accessible to all"</p>
             </div>
             <div className="col-3">
-              <img src="/globe.avif" alt="Global sourcing" />
+              <img src="/globe.avif" alt="" />
               <h3>Only the best</h3>
               <p>"Ingredients sourced from across the world"</p>
             </div>
@@ -127,17 +122,17 @@ export default function Home() {
           <div className="container-f">
             <div className="row-f">
               <div className="footer-col">
-                <h4>Get Help</h4>
+                <h4>get help</h4>
                 <ul>
                   <li><a href="#">FAQ</a></li>
-                  <li><a href="#">Shipping</a></li>
-                  <li><a href="#">Returns</a></li>
-                  <li><a href="#">Order Status</a></li>
-                  <li><a href="#">Payment Options</a></li>
+                  <li><a href="#">shipping</a></li>
+                  <li><a href="#">returns</a></li>
+                  <li><a href="#">order status</a></li>
+                  <li><a href="#">payment options</a></li>
                 </ul>
               </div>
               <div className="footer-col">
-                <h4>Company</h4>
+                <h4>company</h4>
                 <ul>
                   <li><Link href="/about">About Us</Link></li>
                   <li><Link href="/contact">Contact Us</Link></li>
@@ -146,7 +141,7 @@ export default function Home() {
                 </ul>
               </div>
               <div className="footer-col">
-                <h4>Follow Us</h4>
+                <h4>follow us</h4>
                 <div className="social-links">
                   <a href="#"><i className="fab fa-whatsapp"></i></a>
                   <a href="#"><i className="fab fa-facebook-f"></i></a>
