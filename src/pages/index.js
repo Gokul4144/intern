@@ -1,115 +1,162 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import Head from 'next/head';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div
-      className={`${geistSans.className} ${geistMono.className} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <>
+      <Head>
+        <title>MY Shop</title>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="stylesheet" href="/globals.css" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/pages/index.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        />
+      </Head>
+
+      <div className="header">
+        <div className="container">
+          <div className="navbar">  
+            <div className="logo">
+              <Link href="/">logo</Link>
+            </div>
+            <nav>
+              <ul id="MenuItems">
+                <li><Link href="/">Home</Link></li>
+                <li className="dropdown">
+                  <a className="active">Products <i className="fas fa-caret-down"></i></a>
+                  <ul id="inneritems">
+                    <li><Link href="/moisterizers">Moisterizers</Link></li>
+                    <li><Link href="/Serums">Serums</Link></li>
+                    <li><Link href="/Cleansers">Cleansers</Link></li>
+                    <li><Link href="/Sunscreens">Sunscreens</Link></li>
+                  </ul>
+                </li>
+                <li><Link href="/about.js">About</Link></li>
+                <li><Link href="/contact">Contact</Link></li>
+                <li><Link href="/account">Account</Link></li>
+              </ul>
+            </nav>
+            <div className="right-icons">
+              <div className="search-bar">
+                <input type="text" placeholder="Search..." />
+                <button><i className="fas fa-search"></i></button>
+              </div>
+              <Link href="/card"><i className="fas fa-shopping-cart"></i></Link>
+              <Link href="/account"><i className="fas fa-user"></i></Link>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-2">
+              <h1><center>Here shopping becomes <br />simple!</center></h1>
+              <p>
+                "We trust something in our store and assume it's good. We don't learn about the most precious thing in life—
+                the food we put in our body. Educate yourself!"
+              </p>
+              <center><Link href="/allproduct" className="btn">Explore Now</Link></center>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+
+      <div className="small-container">
+        <h2 className="title">Categories</h2>
+        <div className="row">
+          {[
+            { href: 'skincare', img: 'skincare.jpg', label: 'Skin care' },
+            { href: 'haircare', img: 'haircare.jpg', label: 'Hair care' },
+            { href: 'bodycare', img: 'Salicylic_Body_wash-3.avif', label: 'Body care' },
+            { href: 'lipcare', img: 'menuicon.jpg', label: 'Lip care' },
+          ].map((item, index) => (
+            <div className="col-4" key={index}>
+              <Link href={`/${item.href}`}><img src={`/${item.img}`} alt="" /></Link>
+              <Link href={`/${item.href}`}><h4>{item.label}</h4></Link>
+              <Link href={`/${item.href}`}><p>explore more..</p></Link>
+            </div>
+          ))}
+        </div>
+
+        <div className="offer">
+          <div className="row">
+            <div className="col-2">
+              <img src="/Salicylic_Body_wash-3.avif" className="offer-img" alt="" />
+            </div>
+            <div className="col-2">
+              <h4>Exclusively Available in Our Website</h4>
+              <h1>L-Ascorbic Acid 8% Lip Treatment Balm</h1>
+              <small>Prevents & treats hyperpigmentation, hydrates and softens lips</small><br />
+              <Link href="/L-Ascorbic Acid 8% Lip Treatment Balm" className="btn">Buy Now &#10140;</Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="testimonial">
+          <div className="row">
+            <div className="col-3">
+              <img src="/affordable.webp" alt="" />
+              <h3>Transparency</h3>
+              <p>"Full disclosure of ingredients used & their concentration"</p>
+            </div>
+            <div className="col-3">
+              <img src="/affordable.webp" alt="" />
+              <h3>Affordable</h3>
+              <p>"Skincare, accessible to all"</p>
+            </div>
+            <div className="col-3">
+              <img src="/globe.avif" alt="" />
+              <h3>Only the best</h3>
+              <p>"Ingredients sourced from across the world"</p>
+            </div>
+          </div>
+        </div>
+
+        <footer className="footer">
+          <div className="container-f">
+            <div className="row-f">
+              <div className="footer-col">
+                <h4>get help</h4>
+                <ul>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">shipping</a></li>
+                  <li><a href="#">returns</a></li>
+                  <li><a href="#">order status</a></li>
+                  <li><a href="#">payment options</a></li>
+                </ul>
+              </div>
+              <div className="footer-col">
+                <h4>company</h4>
+                <ul>
+                  <li><Link href="/about">About Us</Link></li>
+                  <li><Link href="/contact">Contact Us</Link></li>
+                  <li><Link href="/product">Our Services</Link></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                </ul>
+              </div>
+              <div className="footer-col">
+                <h4>follow us</h4>
+                <div className="social-links">
+                  <a href="#"><i className="fab fa-whatsapp"></i></a>
+                  <a href="#"><i className="fab fa-facebook-f"></i></a>
+                  <a href="#"><i className="fab fa-instagram"></i></a>
+                  <a href="#"><i className="fab fa-linkedin-in"></i></a>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div className="copyright text-center">
+              <h5><a href="#">🌐</a> copyright © logo.com all rights reserved</h5>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </>
   );
 }
